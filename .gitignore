@@ -1,13 +1,8 @@
 # Ignore these files
 
-.DS_Store
-
 data-12-1-2-resources.zip
 data-12-1-2-resources
 
-.Rhistory
-
-test
 
 data-12-2-2-resources.zip
 data-12-2-2-resources
@@ -15,4 +10,17 @@ data-12-2-2-resources
 data-12-3-2-resources.zip
 data-12-3-2-resources
 
+data-12-4-3-resources.zip
+data-12-4-3-resources
+
 spaceX
+
+.Rhistory
+
+test
+
+.DS_Store
+
+practice_listener
+
+practice_data_listener
