@@ -90,7 +90,7 @@ function buildCharts(sample) {
 
     // Deliverable 3: 3. Create a variable that holds the washing frequency.
     var wfreq = parseFloat(metadataResult.wfreq)
-    console.log("wfreq", wfreq);
+ 
 
 
     // 7. Create the yticks for the bar chart.
@@ -114,7 +114,7 @@ function buildCharts(sample) {
       orientation: 'h'
       }
     ];
-    
+
     // 9. Create the layout for the bar chart. 
     var barLayout = {
      title: "Top 10 Bacterial Cultures Found",
@@ -140,7 +140,7 @@ function buildCharts(sample) {
           },
         },
       ];
-  
+
       // 2. Create the layout for the bubble chart.
       const bubbleLayout = {
         title: 'Bacterial Cultures Per Sample',
@@ -148,19 +148,31 @@ function buildCharts(sample) {
         xaxis: { title: 'OTU ID' },
         margin: {t: 30}
       };
-  
+
       // 3. Use Plotly to plot the data with the layout.
       Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
-    });
+
 
       // Deliverable 3: 4. Create the trace for the gauge chart.
       var gaugeData = [
         {
           domain: { x: [0, 1], y: [0, 1] },
           value: wfreq,
-          title: { text: "Speed" },
+          title: { text: "Washing Frequency" },
           type: "indicator",
-          mode: "gauge+number"
+          mode: "gauge+number",
+          gauge: {  
+            axis: { range: [null, 10], tickwidth: 1, tickcolor: "darkblue"},
+            steps: [
+              { range: [0, 10], color: "lightblue" },
+            ],   
+            bar: { color: "orange" },
+            bgcolor: "white",
+            borderwidth: 2,
+            bordercolor: "gray",
+
+
+          }
         }
       ];
       
@@ -171,7 +183,7 @@ function buildCharts(sample) {
   
       // Deliverable 3: 6. Use Plotly to plot the gauge data and layout.
       Plotly.newPlot("gauge", gaugeData, gaugeLayout);
-    
+  });
 }
 
 
